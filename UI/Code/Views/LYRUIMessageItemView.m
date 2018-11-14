@@ -31,6 +31,7 @@ static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
 @property (nonatomic, weak, readwrite) UIView *primaryAccessoryViewContainer;
 @property (nonatomic, weak, readwrite) UIView *contentViewContainer;
 @property (nonatomic, weak, readwrite) UIView *secondaryAccessoryViewContainer;
+@property (nonatomic, weak, readwrite) UIView *statusViewContainer;
 
 @property (nonatomic, weak, readwrite) UITapGestureRecognizer *tapGestureRecognizer;
 
@@ -39,6 +40,7 @@ static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
 @implementation LYRUIMessageItemView
 @synthesize primaryAccessoryView = _primaryAccessoryView,
             contentView = _contentView,
+            statusView = _statusView,
             secondaryAccessoryView = _secondaryAccessoryView,
             layerConfiguration = _layerConfiguration,
             messageId = _messageId,
@@ -86,6 +88,8 @@ static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
     self.contentViewContainer.layer.cornerRadius = LYRUIMessageItemViewContentDefaultCornerRadius;
     self.contentViewContainer.layer.borderWidth = LYRUIMessageItemViewContentDefaultBorderWidth;
     self.secondaryAccessoryViewContainer = [self addView];
+    self.statusViewContainer = [self addView];
+    
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                            action:@selector(handleTap)];
@@ -119,6 +123,17 @@ static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
         [self.primaryAccessoryViewContainer addSubview:primaryAccessoryView];
     }
     _primaryAccessoryView = primaryAccessoryView;
+    [self setNeedsUpdateConstraints];
+}
+
+- (void)setStatusView:(UIView *)statusView {
+    if (self.statusView != nil) {
+        [self.statusView removeFromSuperview];
+    }
+    if (statusView != nil) {
+        [self.statusViewContainer addSubview:statusView];
+    }
+    _statusView = statusView;
     [self setNeedsUpdateConstraints];
 }
 
