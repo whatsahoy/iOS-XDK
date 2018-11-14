@@ -254,6 +254,7 @@
 		594260426BA313502D0ECBAC /* LYRUIConversationItemAccessoryViewProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = DFEC7FD4BF48DFBB8D3B8033 /* LYRUIConversationItemAccessoryViewProviding.h */; };
 		59D2C1BA0AF80C82895CE9D2 /* LYRUIPlaybackControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C3AD844B98177F195F18F /* LYRUIPlaybackControlView.m */; };
 		5A2ECEE3491E5B22AA94CB68 /* LYRUIMessageType+PrivateProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 09ACF364D5FFF8323BD860BB /* LYRUIMessageType+PrivateProperties.h */; };
+		5A72A57C219CA5FD00A5EDB8 /* status_read.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5A72A57B219CA5FD00A5EDB8 /* status_read.pdf */; };
 		5A9538E3B292D171F14AA832 /* LYRUILocationPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0ADB878A3B7095DFE68FB4 /* LYRUILocationPreviewViewController.m */; };
 		5A9BD2186A65B9C7A03FF988 /* LYRUICarouselContentOffsetsCache.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FFFFEAC460DEA1481E68EF /* LYRUICarouselContentOffsetsCache.h */; };
 		5B09BF32CB79D9692B4E27AC /* LYRUILocationMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A554B4868AF8CB2762B11A5 /* LYRUILocationMessage.m */; };
@@ -983,6 +984,7 @@
 		599B9E4E448D45E6134201C8 /* LYRUIFileMessageContentViewPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LYRUIFileMessageContentViewPresenter.m; path = "Code/Presenters/Message Item/Message Types/Medium/Primitives/LYRUIFileMessageContentViewPresenter.m"; sourceTree = "<group>"; };
 		59B37DAC6D94077263FEF10C /* LYRUIDispatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LYRUIDispatcher.m; path = Code/Utilities/LYRUIDispatcher.m; sourceTree = "<group>"; };
 		59BD60DF1DC3F3088F7F3C01 /* location_dark@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "location_dark@3x.png"; path = "Resources/location_dark@3x.png"; sourceTree = "<group>"; };
+		5A72A57B219CA5FD00A5EDB8 /* status_read.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = status_read.pdf; path = Resources/status_read.pdf; sourceTree = "<group>"; };
 		5B392D2CDDF7FF4AAAB34380 /* LYRUIChoice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIChoice.h; path = "Code/Models/Message Types/Composites/LYRUIChoice.h"; sourceTree = "<group>"; };
 		5C84F1B83BB17E31A6251FBF /* LYRUIMessageItemIBSetup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIMessageItemIBSetup.h; path = "Code/Presenters/Message Item/LYRUIMessageItemIBSetup.h"; sourceTree = "<group>"; };
 		5CAE5BF269AFAA07CF9E1766 /* LYRUIDependencyInjectionDefaultModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIDependencyInjectionDefaultModule.h; path = Code/DependencyInjection/Modules/LYRUIDependencyInjectionDefaultModule.h; sourceTree = "<group>"; };
@@ -2189,6 +2191,7 @@
 				702AFC68E1FBCDCBAB823992 /* playback-control-pause@2x.png */,
 				931CF64ABE88E56D20CA08C2 /* FileIconPDF.png */,
 				2FB3274EA7FC75B67C71AC2A /* SingleParticipantPlaceholder.png */,
+				5A72A57B219CA5FD00A5EDB8 /* status_read.pdf */,
 				5438950ED0ECC85640DD7544 /* Receipt@2x.png */,
 				C58804703963085104BD99CF /* Play.png */,
 				9FC4B5C42CBB5802A9A83830 /* FeedbackTitle.png */,
@@ -2670,6 +2673,7 @@
 				F68E86CEFC8E9749A991442C /* MultipleParticipantsPlaceholder@3x.png in Resources */,
 				C2320E933A01F42A520F19FB /* layerbell.caf in Resources */,
 				01926358BCAFC3C20E7E4B78 /* Play@2x.png in Resources */,
+				5A72A57C219CA5FD00A5EDB8 /* status_read.pdf in Resources */,
 				CCC238DDB6BEE2D1D2ABB024 /* FileIconZIP@2x.png in Resources */,
 				827095082DBC5B3DED2E79A5 /* Pause@3x.png in Resources */,
 				0A1F4EDC01BACE27E7F05728 /* FileIconText@2x.png in Resources */,

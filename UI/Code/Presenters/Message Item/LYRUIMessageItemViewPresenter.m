@@ -135,6 +135,10 @@ static CGFloat const LYRUIMessageItemViewMinimumHeight = 32.0;
 
 
 - (void)setupStatusViewInMessageItem:(UIView<LYRUIMessageItemView> *)messageItemView withMessage:(LYRUIMessageType *)message {
+    if (messageItemView.statusView == nil) {
+        messageItemView.statusView = [[LYRUIIconStatusView alloc] initWithConfiguration:self.layerConfiguration];
+    }
+    
     ((LYRUIIconStatusView *)messageItemView.statusView).status = message.status;
 }
 

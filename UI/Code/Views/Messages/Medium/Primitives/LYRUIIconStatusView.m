@@ -43,9 +43,19 @@
 }
 
 - (void)lyr_commonInitWithCoder:(NSCoder *)aDecoder frame:(CGRect)frame {
-    self.backgroundColor = UIColor.clearColor;
+    self.backgroundColor = UIColor.redColor;
     UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.image = [self.imageFactory imageNamed:@"status_read"];
+    imageView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:imageView];
+    
+    [imageView.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
+    [imageView.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
+    [imageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
+    [imageView.leftAnchor constraintEqualToAnchor:self.leftAnchor].active = YES;
+    
+    [self.widthAnchor constraintEqualToConstant:30.0].active = YES;
+    [self.heightAnchor constraintEqualToConstant:20.0].active = YES;
     
 }
 

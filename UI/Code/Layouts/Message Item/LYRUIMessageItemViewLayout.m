@@ -217,13 +217,13 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
     }
     UIView *statusView = view.statusViewContainer;
     UIView *content = view.contentViewContainer;
-//    NSLayoutConstraint *verticalConstraint = [accessoryView.centerYAnchor constraintEqualToAnchor:content.centerYAnchor];
-//    [self.statusViewContainerConstraints addObject:verticalConstraint];
-    // TODO: MAKE CONSTAINTS
-//    [self addAccessoryViewContainerConstraints:accessoryView
-//                                        inView:view
-//                                 toConstraints:self.secondaryAccessoryViewContainerConstraints
-//                                     direction:self.layoutDirection];
+    
+    NSLayoutConstraint *verticalConstraint = [statusView.centerYAnchor constraintEqualToAnchor:content.centerYAnchor];
+    [self.secondaryAccessoryViewContainerConstraints addObject:verticalConstraint];
+    [self addAccessoryViewContainerConstraints:statusView
+                                        inView:view
+                                 toConstraints:self.secondaryAccessoryViewContainerConstraints
+                                     direction:self.layoutDirection];
 }
 
 - (void)addAccessoryViewContainerConstraints:(UIView *)accessoryView

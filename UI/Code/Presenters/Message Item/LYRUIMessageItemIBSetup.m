@@ -36,8 +36,8 @@
     LYRUIAvatarView *avatarView = [[LYRUIAvatarView alloc] init];
     avatarView.translatesAutoresizingMaskIntoConstraints = NO;
     avatarView.backgroundColor = UIColor.whiteColor;
-    [avatarView.widthAnchor constraintEqualToConstant:32.0].active = YES;
-    [avatarView.heightAnchor constraintEqualToConstant:32.0].active = YES;
+    [avatarView.widthAnchor constraintEqualToConstant:30.0].active = YES;
+    [avatarView.heightAnchor constraintEqualToConstant:20.0].active = YES;
     avatarView.identities = @[[LYRIdentity new]];
     return avatarView;
 }
@@ -45,6 +45,8 @@
 - (LYRUIIconStatusView *)statusView:(LYRUIConfiguration*)configuration {
     LYRUIIconStatusView *statusView = [[LYRUIIconStatusView alloc] initWithConfiguration:configuration];
     statusView.translatesAutoresizingMaskIntoConstraints = NO;
+    [statusView.widthAnchor constraintEqualToConstant:32.0].active = YES;
+    [statusView.heightAnchor constraintEqualToConstant:32.0].active = YES;
     return statusView;
 }
 
