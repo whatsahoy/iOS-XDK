@@ -23,7 +23,7 @@
 #import "LYRUIMessageItemViewLayout.h"
 #import "LYRUIMessageItemIBSetup.h"
 
-static CGFloat const LYRUIMessageItemViewContentDefaultCornerRadius = 4.0;
+static CGFloat const LYRUIMessageItemViewContentDefaultCornerRadius = 2.0;
 static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
 
 @interface LYRUIMessageItemView ()

@@ -41,8 +41,8 @@
 
 - (void)lyr_commonInit {
     self.titleFont = [UIFont boldSystemFontOfSize:14.0];
-    self.enabledColor = [UIColor colorWithRed:16.0/255.0 green:148.0/255.0 blue:208.0/255.0 alpha:1.0];
-    self.disabledColor = [UIColor colorWithRed:163.0/255.0 green:168.0/255.0 blue:178.0/255.0 alpha:1.0];
+    self.enabledColor = [UIColor colorWithRed:0.15 green:0.93 blue:0.57 alpha:1.0];
+    self.disabledColor = [UIColor colorWithRed:0.04 green:0.08 blue:0.15 alpha:0.3];
     [self setTitle:@"Send" forState:UIControlStateNormal];
 }
 

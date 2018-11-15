@@ -25,7 +25,7 @@
 #import "LYRUISendButton.h"
 #import "LYRUIConfiguration+DependencyInjection.h"
 
-@interface LYRUIComposeBar ()
+@interface LYRUIComposeBar () <UITextViewDelegate>
 
 @property (nonatomic, weak, readwrite) UITextView *inputTextView;
 @property (nonatomic, strong, readwrite) LYRUISendButton *sendButton;
@@ -72,7 +72,7 @@
 
 - (void)addInputTextView {
     UITextView *textView = [[LYRUIAutoresizingTextView alloc] init];
-    textView.layer.cornerRadius = 8.0;
+    textView.layer.cornerRadius = 2.0;
     textView.layer.borderWidth = 1.0;
     textView.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -85,6 +85,7 @@
     textView.textContainerInset = UIEdgeInsetsMake(6.0, 4.0, 6.0, 4.0);
     [self addSubview:textView];
     
+    textView.delegate = self;
     self.inputTextView = textView;
 }
 
@@ -98,11 +99,11 @@
 }
 
 - (void)setupDefaultColors {
-    self.backgroundColor = [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:242.0/255.0 alpha:1.0];
-    self.messageInputColor = [UIColor whiteColor];
-    self.messageInputBorderColor = [UIColor colorWithRed:219.0/255.0 green:222.0/255.0 blue:228.0/255.0 alpha:1.0];
-    self.placeholderColor = [UIColor colorWithRed:163.0/255.0 green:168.0/255.0 blue:178.0/255.0 alpha:1.0];
-    self.textColor = [UIColor colorWithRed:27.0/255.0 green:28.0/255.0 blue:29.0/255.0 alpha:1.0];
+    self.backgroundColor = [UIColor whiteColor];
+    self.messageInputColor = [UIColor colorWithRed:0.04 green:0.08 blue:0.15 alpha:0.1];
+    self.messageInputBorderColor = [UIColor colorWithRed:0.04 green:0.08 blue:0.15 alpha:0.1];
+    self.placeholderColor = [UIColor colorWithRed:0.04 green:0.08 blue:0.15 alpha:0.3];
+    self.textColor = [UIColor colorWithRed:0.04 green:0.08 blue:0.15 alpha:1.0];
 }
 
 - (void)setupDefaultFonts {
@@ -228,4 +229,13 @@
     }
 }
 
+#pragma mark - UITextViewDelegate
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    self.messageInputColor = [UIColor colorWithRed:0.90 green:0.91 blue:0.91 alpha:1.0];
+    self.messageInputBorderColor = [UIColor colorWithRed:0.04 green:0.08 blue:0.15 alpha:1.0];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    [self setupDefaultColors];
+}
 @end

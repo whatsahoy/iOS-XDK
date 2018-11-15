@@ -67,6 +67,8 @@
     
     switch (message.status.status) {
         case LYRUIMessageStatusNew:
+            self.imageView.image = nil;
+            break;
         case LYRUIMessageStatusPending:
             if([self isOutgoingMessage:message]) {
                 self.imageView.image = [self.imageFactory imageNamed:@"statusPendingOutgoing"];
