@@ -47,6 +47,8 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
 @property (nonatomic, weak) NSLayoutConstraint *contentWidthConstraint;
 @property (nonatomic, strong) NSMutableArray *secondaryAccessoryViewConstraints;
 @property (nonatomic, strong) NSMutableArray *secondaryAccessoryViewContainerConstraints;
+@property (nonatomic, strong) NSMutableArray *statusViewConstraints;
+@property (nonatomic, strong) NSMutableArray *statusViewContainerConstraints;
 
 @end
 
@@ -69,6 +71,8 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
         self.contentViewContainerConstraints = [[NSMutableArray alloc] init];
         self.secondaryAccessoryViewConstraints = [[NSMutableArray alloc] init];
         self.secondaryAccessoryViewContainerConstraints = [[NSMutableArray alloc] init];
+        self.statusViewConstraints = [[NSMutableArray alloc] init];
+        self.statusViewContainerConstraints = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -90,6 +94,8 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
     [self setupContentViewContainerDirectionSnapConstraintInView:view];
     [self addSecondaryAccessoryViewLayoutInView:view];
     [self addSecondaryAccessoryViewContainerConstraintsInView:view];
+    [self addStatusViewLayoutInView:view];
+    [self addStatusViewContainerConstraintsInView:view];
     self.currentLayoutDirection = self.layoutDirection;
 }
 
@@ -100,6 +106,7 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
     [self updatePrimaryAccessoryViewConstraintsInView:view];
     [self updateContentViewConstraintsInView:view];
     [self updateSecondaryAccessoryViewConstraintsInView:view];
+    [self updateStatusViewConstraintsInView:view];
     [view.contentView invalidateIntrinsicContentSize];
     self.currentLayoutDirection = self.layoutDirection;
 }
@@ -113,6 +120,8 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
     self.contentViewContainerDirectionSnapConstraint.active = NO;
     [self removeConstraints:self.secondaryAccessoryViewConstraints];
     [self removeConstraints:self.secondaryAccessoryViewContainerConstraints];
+    [self removeConstraints:self.statusViewConstraints];
+    [self removeConstraints:self.statusViewContainerConstraints];
 }
 
 #pragma mark - Layout
@@ -202,6 +211,24 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
                                      direction:self.layoutDirection];
 }
 
+- (void)addStatusViewContainerConstraintsInView:(LYRUIMessageItemView *)view {
+    if (self.statusViewContainerConstraints.count > 0 || view.statusView == nil) {
+        return;
+    }
+    UIView *statusView = view.statusViewContainer;
+    UIView *content = view.contentViewContainer;
+    
+    NSLayoutConstraint *verticalConstraint = [content.bottomAnchor constraintEqualToAnchor:statusView.bottomAnchor];
+    verticalConstraint.constant = 4;
+    [self.secondaryAccessoryViewContainerConstraints addObject:verticalConstraint];
+    
+    NSLayoutConstraint *rightConstraint = [content.rightAnchor constraintEqualToAnchor:statusView.rightAnchor];
+    rightConstraint.constant = 4;
+    [self.secondaryAccessoryViewContainerConstraints addObject:rightConstraint];
+    
+    [view addConstraints:self.secondaryAccessoryViewContainerConstraints];
+}
+
 - (void)addAccessoryViewContainerConstraints:(UIView *)accessoryView
                                       inView:(LYRUIMessageItemView *)view
                                toConstraints:(NSMutableArray *)constraints
@@ -255,6 +282,10 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
         [self removeConstraints:self.secondaryAccessoryViewContainerConstraints];
         [self addSecondaryAccessoryViewContainerConstraintsInView:view];
     }
+    if ([self shouldUpdateStatusContainerConstraintsInView:view]) {
+        [self removeConstraints:self.statusViewContainerConstraints];
+        [self addStatusViewContainerConstraintsInView:view];
+    }
 }
 
 - (BOOL)shouldUpdatePrimaryAccessoryContainerConstraintsInView:(LYRUIMessageItemView *)view {
@@ -267,6 +298,12 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
     return (self.layoutDirection != self.currentLayoutDirection ||
             (self.secondaryAccessoryViewContainerConstraints.count > 0 && view.secondaryAccessoryView == nil) ||
             (self.secondaryAccessoryViewContainerConstraints.count == 0 && view.secondaryAccessoryView != nil));
+}
+
+- (BOOL)shouldUpdateStatusContainerConstraintsInView:(LYRUIMessageItemView *)view {
+    return (self.layoutDirection != self.currentLayoutDirection ||
+            (self.statusViewContainerConstraints.count > 0 && view.statusView == nil) ||
+            (self.statusViewContainerConstraints.count == 0 && view.statusView != nil));
 }
 
 - (void)addPrimaryAccessoryViewLayoutInView:(LYRUIMessageItemView *)view {
@@ -292,7 +329,21 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
 
 - (void)addContentViewLayoutInView:(LYRUIMessageItemView *)view {
     UIView *contentView = view.contentView;
-    NSArray *constraints = [self layoutViewInSuperview:contentView];
+    NSMutableArray *constraints = [NSMutableArray new];
+    if (contentView != nil) {
+        contentView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [constraints addObject:[contentView.leadingAnchor constraintEqualToAnchor:contentView.superview.leadingAnchor]];
+        
+        NSLayoutConstraint *trailingConstraint = [contentView.trailingAnchor constraintEqualToAnchor:contentView.superview.trailingAnchor];
+        trailingConstraint.constant = -19;
+        [constraints addObject:trailingConstraint];
+        
+        [constraints addObject:[contentView.topAnchor constraintEqualToAnchor:contentView.superview.topAnchor]];
+        [constraints addObject:[contentView.bottomAnchor constraintEqualToAnchor:contentView.superview.bottomAnchor]];
+        
+        [NSLayoutConstraint activateConstraints:constraints];
+    }
     [self.contentViewConstraints addObjectsFromArray:constraints];
 }
 
@@ -310,6 +361,17 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
 - (void)updateSecondaryAccessoryViewConstraintsInView:(LYRUIMessageItemView *)view {
     [self removeConstraints:self.secondaryAccessoryViewConstraints];
     [self addSecondaryAccessoryViewLayoutInView:view];
+}
+
+- (void)addStatusViewLayoutInView:(LYRUIMessageItemView *)view {
+    UIView *statusView = view.statusView;
+    NSArray *constraints = [self layoutViewInSuperview:statusView];
+    [self.statusViewConstraints addObjectsFromArray:constraints];
+}
+
+- (void)updateStatusViewConstraintsInView:(LYRUIMessageItemView *)view {
+    [self removeConstraints:self.statusViewConstraints];
+    [self addStatusViewLayoutInView:view];
 }
 
 - (NSArray<NSLayoutConstraint *> *)layoutViewInSuperview:(UIView *)view {

@@ -64,7 +64,7 @@ static CGFloat const LYRUITextMessageContentViewVerticalPadding = 17.0;
 - (UIColor *)backgroundColorForMessage:(LYRUITextMessage *)message {
     BOOL outgoingMessage = [self isMessageOutgoing:message];
     if (outgoingMessage && message.metadata == nil) {
-        return [UIColor colorWithRed:16.0/255.0 green:148.0/255.0 blue:208.0/255.0 alpha:1.0];
+        return [UIColor colorWithRed:0.12 green:0.22 blue:0.39 alpha:1.0];
     }
     return [super backgroundColorForMessage:message];
 }
