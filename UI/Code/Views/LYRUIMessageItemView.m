@@ -23,7 +23,7 @@
 #import "LYRUIMessageItemViewLayout.h"
 #import "LYRUIMessageItemIBSetup.h"
 
-static CGFloat const LYRUIMessageItemViewContentDefaultCornerRadius = 16.0;
+static CGFloat const LYRUIMessageItemViewContentDefaultCornerRadius = 4.0;
 static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
 
 @interface LYRUIMessageItemView ()
@@ -163,6 +163,13 @@ static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
     _contentViewColor = contentViewColor;
     self.contentViewContainer.backgroundColor = contentViewColor;
     self.contentViewContainer.layer.borderColor = contentViewColor.CGColor;
+    
+    self.contentViewContainer.layer.shadowRadius = 2;
+    self.contentViewContainer.layer.shadowColor = [UIColor colorWithRed:0.04 green:0.08 blue:0.15 alpha:0.5].CGColor;
+    self.contentViewContainer.layer.shadowOffset = CGSizeMake(0, 2);
+    self.contentViewContainer.layer.shadowOpacity = 0.6;
+    self.contentViewContainer.layer.masksToBounds = NO;
+    
 }
 
 #pragma mark - Action handling

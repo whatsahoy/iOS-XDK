@@ -139,7 +139,7 @@ static CGFloat const LYRUIMessageItemViewMinimumHeight = 32.0;
         messageItemView.statusView = [[LYRUIIconStatusView alloc] initWithConfiguration:self.layerConfiguration];
     }
     
-    ((LYRUIIconStatusView *)messageItemView.statusView).status = message.status;
+    [((LYRUIIconStatusView *)messageItemView.statusView) configureWithMessage: message];
 }
 
 #pragma mark - Color setup

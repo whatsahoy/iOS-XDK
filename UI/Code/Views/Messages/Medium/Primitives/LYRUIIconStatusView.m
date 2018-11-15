@@ -8,9 +8,12 @@
 #import "LYRUIIconStatusView.h"
 #import "LYRUIConfiguration+DependencyInjection.h"
 #import "LYRUIImageCreating.h"
+#import "LYRUIMessageType.h"
+#import <LayerKit/layerKit.h>
 
 @interface LYRUIIconStatusView ()
 @property (nonatomic, readonly, strong) id<LYRUIImageCreating> imageFactory;
+@property (nonatomic, weak) UIImageView *imageView;
 @end
 
 @implementation LYRUIIconStatusView
@@ -20,8 +23,8 @@
 - (instancetype)initWithConfiguration:(LYRUIConfiguration *)configuration {
     self = [super initWithFrame:CGRectZero];
     if (self) {
-        [self lyr_commonInitWithCoder:nil frame:CGRectZero];
         self.layerConfiguration = configuration;
+        [self lyr_commonInitWithCoder:nil frame:CGRectZero];
     }
     return self;
 }
@@ -43,10 +46,10 @@
 }
 
 - (void)lyr_commonInitWithCoder:(NSCoder *)aDecoder frame:(CGRect)frame {
-    self.backgroundColor = UIColor.redColor;
+    self.backgroundColor = UIColor.clearColor;
     UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.image = [self.imageFactory imageNamed:@"status_read"];
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
+    imageView.backgroundColor = UIColor.clearColor;
     [self addSubview:imageView];
     
     [imageView.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
@@ -54,9 +57,42 @@
     [imageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
     [imageView.leftAnchor constraintEqualToAnchor:self.leftAnchor].active = YES;
     
-    [self.widthAnchor constraintEqualToConstant:30.0].active = YES;
-    [self.heightAnchor constraintEqualToConstant:20.0].active = YES;
+    [self.widthAnchor constraintEqualToConstant:15.0].active = YES;
+    [self.heightAnchor constraintEqualToConstant:10.0].active = YES;
     
+    self.imageView = imageView;
+}
+
+- (void)configureWithMessage:(LYRUIMessageType *)message {
+    
+    switch (message.status.status) {
+        case LYRUIMessageStatusNew:
+        case LYRUIMessageStatusPending:
+            if([self isOutgoingMessage:message]) {
+                self.imageView.image = [self.imageFactory imageNamed:@"statusPendingOutgoing"];
+            } else {
+                self.imageView.image = [self.imageFactory imageNamed:@"statusPending"];
+            }
+            break;
+            
+        case LYRUIMessageStatusSent:
+        case LYRUIMessageStatusDelivered:
+            if([self isOutgoingMessage:message]) {
+                self.imageView.image = [self.imageFactory imageNamed:@"statusDeliveredOutgoing"];
+            } else {
+                self.imageView.image = [self.imageFactory imageNamed:@"statusDelivered"];
+            }
+            break;
+            
+        case LYRUIMessageStatusRead:
+            self.imageView.image = [self.imageFactory imageNamed:@"statusRead"];
+            break;
+    }
+}
+
+- (BOOL)isOutgoingMessage:(LYRUIMessageType *)message {
+    NSString *currentUserId = self.layerConfiguration.client.authenticatedUser.userID;
+    return [message.sender.userID isEqualToString:currentUserId];
 }
 
 

@@ -218,12 +218,15 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
     UIView *statusView = view.statusViewContainer;
     UIView *content = view.contentViewContainer;
     
-    NSLayoutConstraint *verticalConstraint = [statusView.centerYAnchor constraintEqualToAnchor:content.centerYAnchor];
+    NSLayoutConstraint *verticalConstraint = [content.bottomAnchor constraintEqualToAnchor:statusView.bottomAnchor];
+    verticalConstraint.constant = 4;
     [self.secondaryAccessoryViewContainerConstraints addObject:verticalConstraint];
-    [self addAccessoryViewContainerConstraints:statusView
-                                        inView:view
-                                 toConstraints:self.secondaryAccessoryViewContainerConstraints
-                                     direction:self.layoutDirection];
+    
+    NSLayoutConstraint *rightConstraint = [content.rightAnchor constraintEqualToAnchor:statusView.rightAnchor];
+    rightConstraint.constant = 4;
+    [self.secondaryAccessoryViewContainerConstraints addObject:rightConstraint];
+    
+    [view addConstraints:self.secondaryAccessoryViewContainerConstraints];
 }
 
 - (void)addAccessoryViewContainerConstraints:(UIView *)accessoryView
@@ -326,7 +329,21 @@ static CGSize const LYRUIMessageItemPrimaryAccessoryViewSize = { 32.0, 32.0 };
 
 - (void)addContentViewLayoutInView:(LYRUIMessageItemView *)view {
     UIView *contentView = view.contentView;
-    NSArray *constraints = [self layoutViewInSuperview:contentView];
+    NSMutableArray *constraints = [NSMutableArray new];
+    if (contentView != nil) {
+        contentView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [constraints addObject:[contentView.leadingAnchor constraintEqualToAnchor:contentView.superview.leadingAnchor]];
+        
+        NSLayoutConstraint *trailingConstraint = [contentView.trailingAnchor constraintEqualToAnchor:contentView.superview.trailingAnchor];
+        trailingConstraint.constant = -19;
+        [constraints addObject:trailingConstraint];
+        
+        [constraints addObject:[contentView.topAnchor constraintEqualToAnchor:contentView.superview.topAnchor]];
+        [constraints addObject:[contentView.bottomAnchor constraintEqualToAnchor:contentView.superview.bottomAnchor]];
+        
+        [NSLayoutConstraint activateConstraints:constraints];
+    }
     [self.contentViewConstraints addObjectsFromArray:constraints];
 }
 

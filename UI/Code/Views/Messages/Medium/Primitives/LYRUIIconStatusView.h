@@ -11,9 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class LYRUIMessageType;
 @interface LYRUIIconStatusView : UIView <LYRUIConfigurable>
 
-@property (nonatomic, nullable) LYRUIMessageTypeStatus *status;
+- (void)configureWithMessage:(LYRUIMessageType *)message;
+
 @end
 
 NS_ASSUME_NONNULL_END
