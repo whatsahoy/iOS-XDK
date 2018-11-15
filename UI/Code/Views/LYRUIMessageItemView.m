@@ -23,7 +23,7 @@
 #import "LYRUIMessageItemViewLayout.h"
 #import "LYRUIMessageItemIBSetup.h"
 
-static CGFloat const LYRUIMessageItemViewContentDefaultCornerRadius = 16.0;
+static CGFloat const LYRUIMessageItemViewContentDefaultCornerRadius = 4.0;
 static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
 
 @interface LYRUIMessageItemView ()
@@ -31,6 +31,7 @@ static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
 @property (nonatomic, weak, readwrite) UIView *primaryAccessoryViewContainer;
 @property (nonatomic, weak, readwrite) UIView *contentViewContainer;
 @property (nonatomic, weak, readwrite) UIView *secondaryAccessoryViewContainer;
+@property (nonatomic, weak, readwrite) UIView *statusViewContainer;
 
 @property (nonatomic, weak, readwrite) UITapGestureRecognizer *tapGestureRecognizer;
 
@@ -39,6 +40,7 @@ static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
 @implementation LYRUIMessageItemView
 @synthesize primaryAccessoryView = _primaryAccessoryView,
             contentView = _contentView,
+            statusView = _statusView,
             secondaryAccessoryView = _secondaryAccessoryView,
             layerConfiguration = _layerConfiguration,
             messageId = _messageId,
@@ -86,6 +88,8 @@ static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
     self.contentViewContainer.layer.cornerRadius = LYRUIMessageItemViewContentDefaultCornerRadius;
     self.contentViewContainer.layer.borderWidth = LYRUIMessageItemViewContentDefaultBorderWidth;
     self.secondaryAccessoryViewContainer = [self addView];
+    self.statusViewContainer = [self addView];
+    
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                            action:@selector(handleTap)];
@@ -122,6 +126,17 @@ static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
     [self setNeedsUpdateConstraints];
 }
 
+- (void)setStatusView:(UIView *)statusView {
+    if (self.statusView != nil) {
+        [self.statusView removeFromSuperview];
+    }
+    if (statusView != nil) {
+        [self.statusViewContainer addSubview:statusView];
+    }
+    _statusView = statusView;
+    [self setNeedsUpdateConstraints];
+}
+
 - (void)setContentView:(UIView *)contentView {
     if (self.contentView != nil) {
         [self.contentView removeFromSuperview];
@@ -148,6 +163,13 @@ static CGFloat const LYRUIMessageItemViewContentDefaultBorderWidth = 1.0;
     _contentViewColor = contentViewColor;
     self.contentViewContainer.backgroundColor = contentViewColor;
     self.contentViewContainer.layer.borderColor = contentViewColor.CGColor;
+    
+    self.contentViewContainer.layer.shadowRadius = 2;
+    self.contentViewContainer.layer.shadowColor = [UIColor colorWithRed:0.04 green:0.08 blue:0.15 alpha:0.5].CGColor;
+    self.contentViewContainer.layer.shadowOffset = CGSizeMake(0, 2);
+    self.contentViewContainer.layer.shadowOpacity = 0.6;
+    self.contentViewContainer.layer.masksToBounds = NO;
+    
 }
 
 #pragma mark - Action handling

@@ -28,7 +28,7 @@
     if (self) {
         self.titleLabelFont = [UIFont systemFontOfSize:14.0];
         self.titleLabelTextColor = UIColor.blackColor;
-        self.titleContainerBackgroundColor = UIColor.whiteColor;
+        self.titleContainerBackgroundColor = UIColor.clearColor;
     }
     return self;
 }

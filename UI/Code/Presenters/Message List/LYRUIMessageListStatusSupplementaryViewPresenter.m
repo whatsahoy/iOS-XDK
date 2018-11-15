@@ -104,9 +104,10 @@ static CGFloat const LYRUIMessageListStatusSupplementaryViewDefaultHeight = 17.0
 #pragma mark - LYRUIListSupplementaryViewSizeCalculating
 
 - (CGSize)supplementaryViewSizeInCollectionView:(UICollectionView *)collectionView forItemAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self shouldShowMessageStatusAtIndexPath:indexPath]) {
-        return CGSizeMake(CGRectGetWidth(collectionView.bounds), self.messageStatusHeight);
-    }
+    // !!! RETURNING ZERO BECAUSE AHOY DOES NOT WANT TO SHOW STATUS BELOW MESSAGE !!!
+//    if ([self shouldShowMessageStatusAtIndexPath:indexPath]) {
+//        return CGSizeMake(CGRectGetWidth(collectionView.bounds), self.messageStatusHeight);
+//    }
     return CGSizeZero;
 }
 

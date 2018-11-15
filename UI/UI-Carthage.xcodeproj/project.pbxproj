@@ -202,6 +202,23 @@
 		586CC8698638951ED0662018 /* LYRUIOROperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC08F234CF8702397737E61 /* LYRUIOROperation.m */; };
 		598500E3A31549317D4AE63D /* LYRUIListHeaderViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10642DD941AF742BF42D3F /* LYRUIListHeaderViewLayout.m */; };
 		5999C483134A68ED1B1FDF5C /* LYRUIORSetsCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C076CC785522D7343237637 /* LYRUIORSetsCache.m */; };
+		5A556E6E219D042900EE0EE2 /* LYRUIIconStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A556E6C219D042800EE0EE2 /* LYRUIIconStatusView.m */; };
+		5A556E6F219D042900EE0EE2 /* LYRUIIconStatusView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A556E6D219D042900EE0EE2 /* LYRUIIconStatusView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A556E7F219D044500EE0EE2 /* statusPending@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E70219D044000EE0EE2 /* statusPending@3x.png */; };
+		5A556E80219D044500EE0EE2 /* statusRead@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E71219D044000EE0EE2 /* statusRead@3x.png */; };
+		5A556E81219D044500EE0EE2 /* statusDeliveredOutgoing.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E72219D044100EE0EE2 /* statusDeliveredOutgoing.png */; };
+		5A556E82219D044500EE0EE2 /* statusDeliveredOutgoing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E73219D044100EE0EE2 /* statusDeliveredOutgoing@2x.png */; };
+		5A556E83219D044500EE0EE2 /* statusPending.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E74219D044100EE0EE2 /* statusPending.png */; };
+		5A556E84219D044500EE0EE2 /* statusPendingOutgoing@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E75219D044200EE0EE2 /* statusPendingOutgoing@3x.png */; };
+		5A556E85219D044500EE0EE2 /* statusPendingOutgoing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E76219D044200EE0EE2 /* statusPendingOutgoing@2x.png */; };
+		5A556E86219D044500EE0EE2 /* statusRead.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E77219D044200EE0EE2 /* statusRead.png */; };
+		5A556E87219D044500EE0EE2 /* statusRead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E78219D044300EE0EE2 /* statusRead@2x.png */; };
+		5A556E88219D044500EE0EE2 /* statusDeliveredOutgoing@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E79219D044300EE0EE2 /* statusDeliveredOutgoing@3x.png */; };
+		5A556E89219D044500EE0EE2 /* statusDelivered.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E7A219D044300EE0EE2 /* statusDelivered.png */; };
+		5A556E8A219D044500EE0EE2 /* statusDelivered@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E7B219D044400EE0EE2 /* statusDelivered@3x.png */; };
+		5A556E8B219D044500EE0EE2 /* statusPending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E7C219D044400EE0EE2 /* statusPending@2x.png */; };
+		5A556E8C219D044500EE0EE2 /* statusPendingOutgoing.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E7D219D044500EE0EE2 /* statusPendingOutgoing.png */; };
+		5A556E8D219D044500EE0EE2 /* statusDelivered@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A556E7E219D044500EE0EE2 /* statusDelivered@2x.png */; };
 		5B2183F691EBF52E3512B08E /* LYRUIDependencyInjectionDefaultModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 574EAB487F88B7D7075B431B /* LYRUIDependencyInjectionDefaultModule.m */; };
 		5B4DD98F7875094A1833606B /* LYRUIMessageListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F542F550A9041F9F3C9A065 /* LYRUIMessageListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B72F1283AF0F0AFBD77B31C /* LYRUIMessageItemContentBasePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 062810CD7DB38586EADCFD05 /* LYRUIMessageItemContentBasePresenter.m */; };
@@ -774,6 +791,23 @@
 		5955A0E790B9BCD7E07837A5 /* LYRUIImageCaching.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIImageCaching.h; path = Code/Protocols/LYRUIImageCaching.h; sourceTree = "<group>"; };
 		59D4327FCCB3160EF934C7A3 /* LYRUIImageFetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LYRUIImageFetcher.m; path = Code/Utilities/LYRUIImageFetcher.m; sourceTree = "<group>"; };
 		5A3DA50656C1C5EF208B89AE /* LYRUIReceiptMessageSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIReceiptMessageSerializer.h; path = "Code/Serializers/Message Types/Composites/LYRUIReceiptMessageSerializer.h"; sourceTree = "<group>"; };
+		5A556E6C219D042800EE0EE2 /* LYRUIIconStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LYRUIIconStatusView.m; path = Code/Views/Messages/Medium/Primitives/LYRUIIconStatusView.m; sourceTree = "<group>"; };
+		5A556E6D219D042900EE0EE2 /* LYRUIIconStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LYRUIIconStatusView.h; path = Code/Views/Messages/Medium/Primitives/LYRUIIconStatusView.h; sourceTree = "<group>"; };
+		5A556E70219D044000EE0EE2 /* statusPending@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusPending@3x.png"; path = "Resources/statusPending@3x.png"; sourceTree = "<group>"; };
+		5A556E71219D044000EE0EE2 /* statusRead@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusRead@3x.png"; path = "Resources/statusRead@3x.png"; sourceTree = "<group>"; };
+		5A556E72219D044100EE0EE2 /* statusDeliveredOutgoing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusDeliveredOutgoing.png; path = Resources/statusDeliveredOutgoing.png; sourceTree = "<group>"; };
+		5A556E73219D044100EE0EE2 /* statusDeliveredOutgoing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusDeliveredOutgoing@2x.png"; path = "Resources/statusDeliveredOutgoing@2x.png"; sourceTree = "<group>"; };
+		5A556E74219D044100EE0EE2 /* statusPending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusPending.png; path = Resources/statusPending.png; sourceTree = "<group>"; };
+		5A556E75219D044200EE0EE2 /* statusPendingOutgoing@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusPendingOutgoing@3x.png"; path = "Resources/statusPendingOutgoing@3x.png"; sourceTree = "<group>"; };
+		5A556E76219D044200EE0EE2 /* statusPendingOutgoing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusPendingOutgoing@2x.png"; path = "Resources/statusPendingOutgoing@2x.png"; sourceTree = "<group>"; };
+		5A556E77219D044200EE0EE2 /* statusRead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusRead.png; path = Resources/statusRead.png; sourceTree = "<group>"; };
+		5A556E78219D044300EE0EE2 /* statusRead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusRead@2x.png"; path = "Resources/statusRead@2x.png"; sourceTree = "<group>"; };
+		5A556E79219D044300EE0EE2 /* statusDeliveredOutgoing@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusDeliveredOutgoing@3x.png"; path = "Resources/statusDeliveredOutgoing@3x.png"; sourceTree = "<group>"; };
+		5A556E7A219D044300EE0EE2 /* statusDelivered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusDelivered.png; path = Resources/statusDelivered.png; sourceTree = "<group>"; };
+		5A556E7B219D044400EE0EE2 /* statusDelivered@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusDelivered@3x.png"; path = "Resources/statusDelivered@3x.png"; sourceTree = "<group>"; };
+		5A556E7C219D044400EE0EE2 /* statusPending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusPending@2x.png"; path = "Resources/statusPending@2x.png"; sourceTree = "<group>"; };
+		5A556E7D219D044500EE0EE2 /* statusPendingOutgoing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusPendingOutgoing.png; path = Resources/statusPendingOutgoing.png; sourceTree = "<group>"; };
+		5A556E7E219D044500EE0EE2 /* statusDelivered@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusDelivered@2x.png"; path = "Resources/statusDelivered@2x.png"; sourceTree = "<group>"; };
 		5A617CE96B58D7375B7295A5 /* LYRUIBaseItemView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIBaseItemView.h; path = Code/Views/LYRUIBaseItemView.h; sourceTree = "<group>"; };
 		5A95B51B4EDB1F0792F597FC /* FileIconAudio.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = FileIconAudio.png; path = Resources/FileIconAudio.png; sourceTree = "<group>"; };
 		5AEE84D62ABD417532919F99 /* LYRUICarouselMessageCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUICarouselMessageCollectionViewCell.h; path = Code/Views/LYRUICarouselMessageCollectionViewCell.h; sourceTree = "<group>"; };
@@ -879,7 +913,7 @@
 		81BB5E24208BD4C5BFF5DFBD /* LYRUIProductMessageCompositeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIProductMessageCompositeView.h; path = Code/Views/Messages/Composites/LYRUIProductMessageCompositeView.h; sourceTree = "<group>"; };
 		82B53F415F004D28A1AFFAD5 /* UIButton+LYRUIBlockAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+LYRUIBlockAction.h"; path = "Code/Utilities/UIButton+LYRUIBlockAction.h"; sourceTree = "<group>"; };
 		83C9A17B1F0039CC708AC20E /* LYRUIInitialsFormatting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIInitialsFormatting.h; path = Code/Protocols/LYRUIInitialsFormatting.h; sourceTree = "<group>"; };
-		843F91FA41266C40C7C49B75 /* layerbell.caf */ = {isa = PBXFileReference; includeInIndex = 1; name = layerbell.caf; path = Resources/layerbell.caf; sourceTree = "<group>"; };
+		843F91FA41266C40C7C49B75 /* layerbell.caf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = layerbell.caf; path = Resources/layerbell.caf; sourceTree = "<group>"; };
 		8455403F6E0FC53486A578CB /* LYRUIMessageOpenMapActionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIMessageOpenMapActionHandler.h; path = "Code/Action Handlers/LYRUIMessageOpenMapActionHandler.h"; sourceTree = "<group>"; };
 		847B4489F934D2B184B125F6 /* LYRUIImageCreating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIImageCreating.h; path = Code/Protocols/LYRUIImageCreating.h; sourceTree = "<group>"; };
 		84B7354F3E43ADED8533F13B /* LYRUIMessageListTypingIndicatorsControlling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYRUIMessageListTypingIndicatorsControlling.h; path = Code/Protocols/LYRUIMessageListTypingIndicatorsControlling.h; sourceTree = "<group>"; };
@@ -1527,6 +1561,8 @@
 				ACE8AEA614CD73E9428BA9A4 /* LYRUIListQueryControllerDelegate.h */,
 				5888AA73E9436102C76D2A17 /* LYRUIListDataSource.h */,
 				605C59902903AE68E53655D4 /* LYRUIMessageListTypingIndicatorsController.h */,
+				5A556E6D219D042900EE0EE2 /* LYRUIIconStatusView.h */,
+				5A556E6C219D042800EE0EE2 /* LYRUIIconStatusView.m */,
 				C0354C3D0B661A1984B009DD /* LYRUIListSection.h */,
 				E0BC1B321935072775542BC1 /* LYRMessagePart+LYRUIHelpers.h */,
 				5C99F723047DC8763725C92A /* LYRUIMessageListDelegate.h */,
@@ -1775,6 +1811,21 @@
 				DAFCE3C3A513E21C73A112AB /* DisclosureIndicator@2x.png */,
 				58F03AF0E6E4BD4121343816 /* camera_dark@2x.png */,
 				162E3FF2C17CB5508683F1DE /* plus@2x.png */,
+				5A556E7A219D044300EE0EE2 /* statusDelivered.png */,
+				5A556E7E219D044500EE0EE2 /* statusDelivered@2x.png */,
+				5A556E7B219D044400EE0EE2 /* statusDelivered@3x.png */,
+				5A556E72219D044100EE0EE2 /* statusDeliveredOutgoing.png */,
+				5A556E73219D044100EE0EE2 /* statusDeliveredOutgoing@2x.png */,
+				5A556E79219D044300EE0EE2 /* statusDeliveredOutgoing@3x.png */,
+				5A556E74219D044100EE0EE2 /* statusPending.png */,
+				5A556E7C219D044400EE0EE2 /* statusPending@2x.png */,
+				5A556E70219D044000EE0EE2 /* statusPending@3x.png */,
+				5A556E7D219D044500EE0EE2 /* statusPendingOutgoing.png */,
+				5A556E76219D044200EE0EE2 /* statusPendingOutgoing@2x.png */,
+				5A556E75219D044200EE0EE2 /* statusPendingOutgoing@3x.png */,
+				5A556E77219D044200EE0EE2 /* statusRead.png */,
+				5A556E78219D044300EE0EE2 /* statusRead@2x.png */,
+				5A556E71219D044000EE0EE2 /* statusRead@3x.png */,
 				5A95B51B4EDB1F0792F597FC /* FileIconAudio.png */,
 				120925AAB5BE6B936B170468 /* plus@3x.png */,
 				2EA64705584E06815A4B0E79 /* camera_dark@3x.png */,
@@ -1842,6 +1893,7 @@
 				2A663D692FDBC128B6B9A8CC /* LYRUICarouselContentOffsetsCache.h in Headers */,
 				4742A0663C2C6979F89B57FC /* LYRUIReceiptMessage.h in Headers */,
 				DDFAAAC5C293DFEE501619E7 /* LYRUIChoice.h in Headers */,
+				5A556E6F219D042900EE0EE2 /* LYRUIIconStatusView.h in Headers */,
 				4E7D519B2F8D3579E3964BB6 /* LYRUIORSetsCache.h in Headers */,
 				A3DFF79D59ED514B30694FCB /* LYRUIReceiptOrder.h in Headers */,
 				263AF83034E4EBF778562EAA /* LYRUIButtonsMessageActionButton.h in Headers */,
@@ -2186,15 +2238,22 @@
 			files = (
 				6595D025136F0225B2B0E8AA /* FileIconText@3x.png in Resources */,
 				7BECC51CAF5125820F400DEB /* FileIconZIP@3x.png in Resources */,
+				5A556E89219D044500EE0EE2 /* statusDelivered.png in Resources */,
 				109CD242A31F0E14B5CED90A /* plus.png in Resources */,
+				5A556E7F219D044500EE0EE2 /* statusPending@3x.png in Resources */,
 				66C236C57289F25168D5609D /* FileIconImage.png in Resources */,
 				E1C3DC752B74C15A37A0631A /* MultipleParticipantsPlaceholder@2x.png in Resources */,
 				2BD8EF064D8ED80ECEF46A28 /* FileIconZIP.png in Resources */,
 				5417A86DA0194FE408FFF02C /* FileIconText.png in Resources */,
+				5A556E81219D044500EE0EE2 /* statusDeliveredOutgoing.png in Resources */,
+				5A556E8A219D044500EE0EE2 /* statusDelivered@3x.png in Resources */,
 				F79725FF4FE44058F7B0A19A /* MultipleParticipantsPlaceholder@3x.png in Resources */,
 				01ED17DAB5B923EFC13F6EC4 /* layerbell.caf in Resources */,
+				5A556E84219D044500EE0EE2 /* statusPendingOutgoing@3x.png in Resources */,
 				077877DD880EEFA5880CE557 /* FileIconZIP@2x.png in Resources */,
 				4321ED14D077CE17B34EB765 /* FileIconText@2x.png in Resources */,
+				5A556E87219D044500EE0EE2 /* statusRead@2x.png in Resources */,
+				5A556E85219D044500EE0EE2 /* statusPendingOutgoing@2x.png in Resources */,
 				51565F7647346FEFC0E3627C /* DisclosureIndicator.png in Resources */,
 				318CDE3BCCB07B88941E2093 /* SingleParticipantPlaceholder@2x.png in Resources */,
 				3D127699895A8C8307A10C28 /* DisclosureIndicator@2x.png in Resources */,
@@ -2202,6 +2261,7 @@
 				38380E4FE36350962034FF21 /* plus@2x.png in Resources */,
 				B377590A12FE2E9AF419CDBD /* FileIconAudio.png in Resources */,
 				4CC17F98663D2B645F2B5571 /* plus@3x.png in Resources */,
+				5A556E80219D044500EE0EE2 /* statusRead@3x.png in Resources */,
 				6B55E19D2A5C0036A60013C8 /* camera_dark@3x.png in Resources */,
 				653CDEC4F3E9E1AB9B39858F /* chevron.png in Resources */,
 				6392A3B18C0D79E3EC9EC048 /* DisclosureIndicator@3x.png in Resources */,
@@ -2215,24 +2275,31 @@
 				D44AFAB82B3EFAA329A25E0B /* layerLogo@2x.png in Resources */,
 				DB3952B6DAC206A5F604EB26 /* location_dark.png in Resources */,
 				E029D3916A7687611F0AF21A /* layerLogo@3x.png in Resources */,
+				5A556E8C219D044500EE0EE2 /* statusPendingOutgoing.png in Resources */,
+				5A556E88219D044500EE0EE2 /* statusDeliveredOutgoing@3x.png in Resources */,
 				66BC6803AE7E639F358589EE /* FileIconGeneric@2x.png in Resources */,
 				1ED9258885EE20A08AE98CBA /* block@3x.png in Resources */,
 				ADDD4444B15A2C9837F2BCEB /* chevron@2x.png in Resources */,
 				93B54DFF508F8697DCEEF726 /* MultipleParticipantsPlaceholder.png in Resources */,
 				D4355543506B1BDCF8E1C956 /* Choice@3x.png in Resources */,
 				7E01B89D4C1071CF4D1709B2 /* camera_dark.png in Resources */,
+				5A556E82219D044500EE0EE2 /* statusDeliveredOutgoing@2x.png in Resources */,
 				6E9AC532405837AA473BAB0C /* FileIconPDF@2x.png in Resources */,
 				320F75DF10A6D84CAD8B2F10 /* FileIconAudio2.png in Resources */,
 				B94B160FB407256918297796 /* FileIconAudio2@3x.png in Resources */,
 				E35A7863953051E37A11DC39 /* FileIconImage@3x.png in Resources */,
+				5A556E86219D044500EE0EE2 /* statusRead.png in Resources */,
+				5A556E8D219D044500EE0EE2 /* statusDelivered@2x.png in Resources */,
 				69EADC427D0EEF54A4A5E26F /* FileIconAudio@2x.png in Resources */,
 				FDF16628A785F8BB1A9A215E /* FileIconGeneric.png in Resources */,
+				5A556E8B219D044500EE0EE2 /* statusPending@2x.png in Resources */,
 				383EB1DF23E30B0184BF131B /* location_dark@3x.png in Resources */,
 				03EEFC51C12708C3D99DD17F /* Receipt@3x.png in Resources */,
 				D4362D3840C34AD5AA9C08E5 /* layerLogo.png in Resources */,
 				0B6049141B93C27560048148 /* FileIconPDF.png in Resources */,
 				4E7F18715F8031F2BFA4482C /* SingleParticipantPlaceholder.png in Resources */,
 				D9569F2F878E1BFF50FBACE4 /* Receipt@2x.png in Resources */,
+				5A556E83219D044500EE0EE2 /* statusPending.png in Resources */,
 				74973452DBCA29C56AB8F6A1 /* location_dark@2x.png in Resources */,
 				0181A37FDA1BDF60E2B6C804 /* FileIconAudio@3x.png in Resources */,
 				88C2438A375D5E82765F3912 /* FileIconImage@2x.png in Resources */,
@@ -2279,6 +2346,7 @@
 				4246AE3A0C8E057E67AF94B3 /* LYRUIButtonsMessage.m in Sources */,
 				360077313FB9B75CD3BE5EB0 /* LYRUIButtonsMessageActionButton.m in Sources */,
 				E47BC3BE29F4216C6BF49573 /* LYRUIReceiptSummary.m in Sources */,
+				5A556E6E219D042900EE0EE2 /* LYRUIIconStatusView.m in Sources */,
 				DA01FC2725BAA0A6C130E821 /* LYRUIChoiceMessage.m in Sources */,
 				C714E07B9836971069D54BD9 /* LYRUIReceiptDiscount.m in Sources */,
 				E4FCC858F6AB2311A37C735E /* LYRUICarouselMessage.m in Sources */,

@@ -91,7 +91,12 @@ static CGFloat const LYRUIMessageItemViewMaximumPreviewImageSize = 300.0;
     return nil;
 }
 
+
 - (UIColor *)backgroundColorForMessage:(LYRUIMessageType *)message {
+    BOOL outgoingMessage = [self isMessageOutgoing:message];
+    if (outgoingMessage && message.metadata == nil) {
+        return [UIColor colorWithRed:0.12 green:0.22 blue:0.39 alpha:1.0];
+    }
     return [UIColor colorWithWhite:242.0/255.0 alpha:1.0];
 }
 

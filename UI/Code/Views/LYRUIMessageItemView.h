@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN     // {
 @property (nonatomic, weak, readonly) UITapGestureRecognizer *tapGestureRecognizer;
 
 @property(nonatomic, strong, nullable) UIView *primaryAccessoryView;
+@property(nonatomic, strong, nullable) UIView *statusView;
 @property(nonatomic, strong, nullable) UIView *contentView;
 @property(nonatomic, strong, nullable) UIView *secondaryAccessoryView;
 
@@ -77,6 +78,11 @@ IB_DESIGNABLE
 @property(nonatomic, strong, nullable) IBOutlet UIView *secondaryAccessoryView;
 
 /**
+ @abstract An status view
+ */
+@property(nonatomic, strong, nullable) IBOutlet UIView *statusView;
+
+/**
  @abstract The view in which the primary accessory view will be contained;
  */
 @property (nonatomic, weak, readonly) UIView *primaryAccessoryViewContainer;
@@ -90,6 +96,11 @@ IB_DESIGNABLE
  @abstract The view in which the secondary accessory view will be contained;
  */
 @property (nonatomic, weak, readonly) UIView *secondaryAccessoryViewContainer;
+
+/**
+ @abstract The view in which we show the status;
+ */
+@property (nonatomic, weak, readonly) UIView *statusViewContainer;
 
 /**
  @abstract Layout of the message item subviews.

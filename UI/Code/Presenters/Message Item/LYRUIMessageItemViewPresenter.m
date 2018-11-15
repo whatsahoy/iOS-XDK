@@ -30,6 +30,7 @@
 #import "LYRUIMessageViewContainer.h"
 #import "LYRUIViewReusing.h"
 #import "LYRUIMessageItemContentBasePresenter.h"
+#import "LYRUIIconStatusView.h"
 
 static CGFloat const LYRUIMessageItemViewMinimumHeight = 32.0;
 
@@ -74,6 +75,7 @@ static CGFloat const LYRUIMessageItemViewMinimumHeight = 32.0;
     [self setupMessageItemViewBubbleColor:messageItemView withMessage:message];
     messageItemView.contentView = [self contentViewForMessage:message];
     [self setupAvatarViewInMessageItem:messageItemView withMessage:message];
+    [self setupStatusViewInMessageItem:messageItemView withMessage:message];
     
     __weak __typeof(self) weakSelf = self;
     LYRUIMessageAction *action = message.action;
@@ -120,6 +122,15 @@ static CGFloat const LYRUIMessageItemViewMinimumHeight = 32.0;
     } else {
         [self.primaryAccessoryViewProvider setupAccessoryView:messageItemView.primaryAccessoryView forMessage:message];
     }
+}
+
+
+- (void)setupStatusViewInMessageItem:(UIView<LYRUIMessageItemView> *)messageItemView withMessage:(LYRUIMessageType *)message {
+    if (messageItemView.statusView == nil) {
+        messageItemView.statusView = [[LYRUIIconStatusView alloc] initWithConfiguration:self.layerConfiguration];
+    }
+    
+    [((LYRUIIconStatusView *)messageItemView.statusView) configureWithMessage: message];
 }
 
 #pragma mark - Color setup

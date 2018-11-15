@@ -21,12 +21,14 @@
 #import "LYRUIMessageItemIBSetup.h"
 #import "LYRUIMessageItemView.h"
 #import "LYRUIAvatarView.h"
+#import "LYRUIIconStatusView.h"
 
 @implementation LYRUIMessageItemIBSetup
 
 - (void)prepareMessageItemForInterfaceBuilder:(LYRUIMessageItemView *)messageItem {
     messageItem.primaryAccessoryView = [self avatarView];
     messageItem.secondaryAccessoryView = [self accessoryView];
+    messageItem.statusView = [self statusView:messageItem.layerConfiguration];
     [self addContentViewInMessageItem:messageItem];
 }
 
@@ -38,6 +40,14 @@
     [avatarView.heightAnchor constraintEqualToConstant:32.0].active = YES;
     avatarView.identities = @[[LYRIdentity new]];
     return avatarView;
+}
+
+- (LYRUIIconStatusView *)statusView:(LYRUIConfiguration*)configuration {
+    LYRUIIconStatusView *statusView = [[LYRUIIconStatusView alloc] initWithConfiguration:configuration];
+    statusView.translatesAutoresizingMaskIntoConstraints = NO;
+    [statusView.widthAnchor constraintEqualToConstant:32.0].active = YES;
+    [statusView.heightAnchor constraintEqualToConstant:32.0].active = YES;
+    return statusView;
 }
 
 - (UIView *)accessoryView {
