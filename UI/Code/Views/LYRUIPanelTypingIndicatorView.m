@@ -84,7 +84,7 @@ NSString *(^LYRUIPanelTypingIndicatorViewDefaultTitleFotmatting)(NSArray<LYRIden
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UILabel *label = [[UILabel alloc] init];
     label.translatesAutoresizingMaskIntoConstraints = NO;
-    label.font = [UIFont systemFontOfSize:13.0 weight:UIFontWeightBold];
+    label.font = [UIFont fontWithName:@"Lato-Bold" size:13.0];
     label.textColor = [UIColor colorWithRed:163.0/255.0 green:168.0/255.0 blue:178.0/255.0 alpha:1.0];
     [self addSubview:label];
     self.label = label;

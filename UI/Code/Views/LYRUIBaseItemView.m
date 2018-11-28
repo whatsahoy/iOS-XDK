@@ -67,11 +67,11 @@
     UIColor *blackColor = [UIColor colorWithRed:27.0/255.0 green:28.0/255.0 blue:29.0/255.0 alpha:1.0];
     UIColor *grayColor = [UIColor colorWithRed:163.0/255.0 green:168.0/255.0 blue:178.0/255.0 alpha:1.0];
     
-    self.titleLabel = [self addLabelWithFont:[UIFont systemFontOfSize:16]
+    self.titleLabel = [self addLabelWithFont:[UIFont fontWithName:@"Lato-Regular" size:16.0]
                                                textColor:blackColor];
-    self.subtitleLabel = [self addLabelWithFont:[UIFont systemFontOfSize:14]
+    self.subtitleLabel = [self addLabelWithFont:[UIFont fontWithName:@"Lato-Regular" size:14.0]
                                          textColor:grayColor];
-    self.detailLabel = [self addLabelWithFont:[UIFont systemFontOfSize:12]
+    self.detailLabel = [self addLabelWithFont:[UIFont fontWithName:@"Lato-Regular" size:12.0]
                                   textColor:grayColor];
     
     UIView *accessoryViewContainer = [[UIView alloc] init];

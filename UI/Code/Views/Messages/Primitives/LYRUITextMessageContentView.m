@@ -54,7 +54,7 @@
     textView.linkTextAttributes = @{ NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle) };
     textView.editable = NO;
     textView.scrollEnabled = NO;
-    textView.font = [UIFont systemFontOfSize:14.0];
+    textView.font = [UIFont fontWithName:@"Lato-Regular" size:14.0];
     textView.textContainerInset = UIEdgeInsetsMake(8.0, 7.0, 9.0, 7.0);
     [self addSubview:textView];
     self.textView = textView;

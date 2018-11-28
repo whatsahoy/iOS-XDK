@@ -70,6 +70,7 @@
     UILabel *label = [[UILabel alloc] init];
     label.translatesAutoresizingMaskIntoConstraints = NO;
     label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont fontWithName:@"Lato-Regular" size:14.0];
     [self addSubview:label];
     self.label = label;
 }

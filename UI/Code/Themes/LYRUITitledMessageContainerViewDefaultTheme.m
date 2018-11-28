@@ -26,7 +26,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.titleLabelFont = [UIFont systemFontOfSize:14.0];
+        self.titleLabelFont = [UIFont fontWithName:@"Lato-Regular" size:14.0];
         self.titleLabelTextColor = UIColor.blackColor;
         self.titleContainerBackgroundColor = UIColor.clearColor;
     }

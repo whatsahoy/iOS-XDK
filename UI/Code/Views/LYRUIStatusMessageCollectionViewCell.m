@@ -51,7 +51,7 @@
     textView.editable = NO;
     textView.scrollEnabled = NO;
     textView.translatesAutoresizingMaskIntoConstraints = NO;
-    textView.font = [UIFont systemFontOfSize:13.0];
+    textView.font = [UIFont fontWithName:@"Lato-Regular" size:13.0];
     textView.textColor = [UIColor colorWithRed:163.0/255.0 green:168.0/255.0 blue:178.0/255.0 alpha:1.0];
     [self.contentView addSubview:textView];
     self.textView = textView;

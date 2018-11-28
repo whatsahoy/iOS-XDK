@@ -134,7 +134,7 @@ static CGFloat const LYRUIReceiptMessageCompositeViewMinWidth = 292.0;
     self.paymentStackView = stackView;
     
     UILabel *titleLabel = [self newLabel];
-    titleLabel.font = [UIFont systemFontOfSize:12.0];
+    titleLabel.font = [UIFont fontWithName:@"Lato-Regular" size:12.0];
     titleLabel.textColor = [UIColor colorWithRed:110.0/255.0 green:114.0/255.0 blue:122.0/255.0 alpha:1.0];
     [stackView addArrangedSubview:titleLabel];
     self.paymentTitleLabel = titleLabel;
@@ -158,7 +158,7 @@ static CGFloat const LYRUIReceiptMessageCompositeViewMinWidth = 292.0;
     self.shippingStackView = stackView;
     
     UILabel *titleLabel = [self newLabel];
-    titleLabel.font = [UIFont systemFontOfSize:12.0];
+    titleLabel.font = [UIFont fontWithName:@"Lato-Regular" size:12.0];
     titleLabel.textColor = [UIColor colorWithRed:110.0/255.0 green:114.0/255.0 blue:122.0/255.0 alpha:1.0];
     [stackView addArrangedSubview:titleLabel];
     self.shippingTitleLabel = titleLabel;
@@ -196,7 +196,7 @@ static CGFloat const LYRUIReceiptMessageCompositeViewMinWidth = 292.0;
     UILabel *label = [[UILabel alloc] init];
     label.numberOfLines = 0;
     label.translatesAutoresizingMaskIntoConstraints = NO;
-    label.font = [UIFont systemFontOfSize:14.0];
+    label.font = [UIFont fontWithName:@"Lato-Regular" size:14.0];
     label.textColor = UIColor.blackColor;
     [label setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
     return label;

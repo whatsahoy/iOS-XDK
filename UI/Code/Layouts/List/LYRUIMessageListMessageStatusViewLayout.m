@@ -52,7 +52,7 @@
     [constraints addObject:[view.label.rightAnchor constraintEqualToAnchor:view.rightAnchor constant:-60.0]];
     [constraints addObject:[view.label.heightAnchor constraintEqualToConstant:13.0]];
     view.label.textAlignment = NSTextAlignmentRight;
-    view.label.font = [UIFont systemFontOfSize:11.0];
+    view.label.font = [UIFont fontWithName:@"Lato-Regular" size:11.0];
     [NSLayoutConstraint activateConstraints:constraints];
 }
 

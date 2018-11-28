@@ -107,7 +107,7 @@
 }
 
 - (void)setupDefaultFonts {
-    self.textFont = [UIFont systemFontOfSize:14.0];
+    self.textFont = [UIFont fontWithName:@"Lato-Regular" size:14.0];
 }
 
 - (void)prepareForInterfaceBuilder {

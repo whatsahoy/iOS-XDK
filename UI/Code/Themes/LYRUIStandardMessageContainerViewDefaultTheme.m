@@ -29,11 +29,11 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.titleLabelFont = [UIFont systemFontOfSize:14.0];
+        self.titleLabelFont = [UIFont fontWithName:@"Lato-Regular" size:14.0];
         self.titleLabelTextColor = UIColor.blackColor;
-        self.descriptionLabelFont = [UIFont systemFontOfSize:12.0];
+        self.descriptionLabelFont = [UIFont fontWithName:@"Lato-Regular" size:12.0];
         self.descriptionLabelTextColor = [UIColor colorWithRed:110.0/255.0 green:114.0/255.0 blue:122.0/255.0 alpha:1.0];
-        self.footerLabelFont = [UIFont systemFontOfSize:11.0];
+        self.footerLabelFont = [UIFont fontWithName:@"Lato-Regular" size:11.0];
         self.footerLabelTextColor = [UIColor colorWithRed:164.0/255.0 green:168.0/255.0 blue:178.0/255.0 alpha:1.0];
         self.metadataContainerBackgroundColor = UIColor.clearColor;
     }

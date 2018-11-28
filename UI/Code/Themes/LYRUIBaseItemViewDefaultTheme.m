@@ -33,11 +33,11 @@
     if (self) {
         UIColor *blackColor = [UIColor colorWithRed:27.0/255.0 green:28.0/255.0 blue:29.0/255.0 alpha:1.0];
         UIColor *grayColor = [UIColor colorWithRed:163.0/255.0 green:168.0/255.0 blue:178.0/255.0 alpha:1.0];
-        self.titleLabelFont = [UIFont systemFontOfSize:16];
+        self.titleLabelFont = [UIFont fontWithName:@"Lato-Regular" size:16.0];
         self.titleLabelColor = blackColor;
-        self.subtitleLabelFont = [UIFont systemFontOfSize:14];
+        self.subtitleLabelFont = [UIFont fontWithName:@"Lato-Regular" size:14.0];
         self.subtitleLabelColor = grayColor;
-        self.detailLabelFont = [UIFont systemFontOfSize:12];
+        self.detailLabelFont = [UIFont fontWithName:@"Lato-Regular" size:12.0];
         self.detailLabelColor = grayColor;
     }
     return self;

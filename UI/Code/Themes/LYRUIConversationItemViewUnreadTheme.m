@@ -32,11 +32,11 @@
     self = [super init];
     if (self) {
         UIColor *blackColor = [UIColor colorWithRed:27.0/255.0 green:28.0/255.0 blue:29.0/255.0 alpha:1.0];
-        self.titleLabelFont = [UIFont boldSystemFontOfSize:16];
+        self.titleLabelFont = [UIFont fontWithName:@"Lato-Bold" size:16.0];
         self.titleLabelColor = blackColor;
-        self.subtitleLabelFont = [UIFont systemFontOfSize:14];
+        self.subtitleLabelFont = [UIFont fontWithName:@"Lato-Regular" size:14.0];
         self.subtitleLabelColor = blackColor;
-        self.detailLabelFont = [UIFont systemFontOfSize:12];
+        self.detailLabelFont = [UIFont fontWithName:@"Lato-Regular" size:12.0];
         self.detailLabelColor = blackColor;
     }
     return self;

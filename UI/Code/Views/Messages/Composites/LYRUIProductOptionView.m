@@ -47,11 +47,11 @@
 
 - (void)lyr_commonInit {
     UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.font = [UIFont boldSystemFontOfSize:14.0];
+    titleLabel.font = [UIFont fontWithName:@"Lato-Bold" size:14.0];
     titleLabel.textColor = UIColor.blackColor;
     [titleLabel setContentHuggingPriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
     UILabel *valueLabel = [[UILabel alloc] init];
-    valueLabel.font = [UIFont systemFontOfSize:14.0];
+    valueLabel.font = [UIFont fontWithName:@"Lato-Regular" size:14.0];
     valueLabel.textColor = [UIColor colorWithRed:110.0/255.0 green:114.0/255.0 blue:122.0/255.0 alpha:1.0];
     [valueLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
     UIStackView *stackView = [[UIStackView alloc] initWithArrangedSubviews:@[titleLabel, valueLabel]];

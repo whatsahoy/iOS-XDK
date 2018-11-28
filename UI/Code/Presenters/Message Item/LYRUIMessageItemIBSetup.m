@@ -63,7 +63,7 @@
 - (void)addContentViewInMessageItem:(LYRUIMessageItemView *)messageItem {
     UITextView *textView = [[UITextView alloc] init];
     textView.scrollEnabled = NO;
-    textView.font = [UIFont systemFontOfSize:14.0];
+    textView.font = [UIFont fontWithName:@"Lato-Regular" size:14.0];
     textView.text = @"Mistakes are always forgivable, if one has the courage to admit them. I’m not in this world to live up to your expectations and you’re not in this world to live up to mine. If you spend too much time thinking about a thing, you'll never get it done.";
     textView.textContainerInset = UIEdgeInsetsMake(9.0, 10.0, 9.0, 10.0);
     messageItem.contentView = textView;

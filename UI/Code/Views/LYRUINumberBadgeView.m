@@ -56,7 +56,7 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.layer.cornerRadius = 4.0;
     label.layer.borderWidth = 1.0;
-    label.font = [UIFont systemFontOfSize:9.0];
+    label.font = [UIFont fontWithName:@"Lato-Regular" size:9.0];
     [self addSubview:label];
     self.label = label;
 }

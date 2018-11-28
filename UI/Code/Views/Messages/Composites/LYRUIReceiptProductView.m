@@ -82,19 +82,19 @@
     self.labelsStackView = labelsStackView;
     
     UILabel *nameLabel = [self newLabel];
-    nameLabel.font = [UIFont systemFontOfSize:14.0];
+    nameLabel.font = [UIFont fontWithName:@"Lato-Regular" size:14.0];
     nameLabel.textColor = UIColor.blackColor;
     [labelsStackView addArrangedSubview:nameLabel];
     self.nameLabel = nameLabel;
     
     UILabel *optionsLabel = [self newLabel];
-    optionsLabel.font = [UIFont systemFontOfSize:12.0];
+    optionsLabel.font = [UIFont fontWithName:@"Lato-Regular" size:12.0];
     optionsLabel.textColor = [UIColor colorWithRed:110.0/255.0 green:114.0/255.0 blue:122.0/255.0 alpha:1.0];
     [labelsStackView addArrangedSubview:optionsLabel];
     self.optionsLabel = optionsLabel;
     
     UILabel *quantityLabel = [self newLabel];
-    quantityLabel.font = [UIFont systemFontOfSize:11.0];
+    quantityLabel.font = [UIFont fontWithName:@"Lato-Regular" size:11.0];
     quantityLabel.textColor = [UIColor colorWithRed:163.0/255.0 green:168.0/255.0 blue:178.0/255.0 alpha:1.0];
     [labelsStackView addArrangedSubview:quantityLabel];
     self.quantityLabel = quantityLabel;
