@@ -36,7 +36,7 @@ static CGFloat const LYRUIMessageCellPresenterWideWidth = 600.0;
 static CGFloat const LYRUIMessageCellPresenterSmallMaxWidthRatio = 0.6;
 static CGFloat const LYRUIMessageCellPresenterMediumMaxWidthRatio = 0.75;
 
-static CGFloat const LYRUIMessageCellPresenterViewsWithMarginsWidth = 64.0;
+static CGFloat const LYRUIMessageCellPresenterViewsWithMarginsWidth = 64.0 + 25;
 
 @interface LYRUIMessageCellPresenter ()
 
